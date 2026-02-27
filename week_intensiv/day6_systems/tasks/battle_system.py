@@ -16,4 +16,13 @@ class Battle:
     """
     def fight(self, h1: Hero, h2: Hero):
         # ТВОЙ КОД ЗДЕСЬ
-        pass
+        while h1.hp > 0 and h2.hp > 0:
+            h2.hp -= h1.atk
+            if h2.hp > 0:
+                h1.hp -= h2.atk
+        if h1.hp > 0:
+            return h1.name
+        elif h2.hp > 0:
+            return h2.name
+        else:
+            return h1.name
